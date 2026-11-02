@@ -1,0 +1,45 @@
+MASK = 0xFF
+
+def to_binary(n):
+    return format(n & MASK, '08b')
+
+def to_signed(n):
+    if n & 0x80:
+        return n - 256
+    return n
+
+def arithmetic(a, b, operator):
+    a_bin = a & MASK
+    b_bin = b & MASK
+
+    print("\nFirst Operand :", to_binary(a_bin))
+    print("Second Operand:", to_binary(b_bin))
+
+    if operator == '+':
+        result = (a_bin + b_bin) & MASK
+        expected = a + b
+        print("Operation: Addition")
+    else:
+        complement = (~b_bin + 1) & MASK
+        print("2's Complement of Second Operand:",
+              to_binary(complement))
+        result = (a_bin + complement) & MASK
+        expected = a - b
+        print("Operation: Subtraction")
+
+    print("Result in Binary :", to_binary(result))
+    print("Result in Decimal:", to_signed(result))
+
+    if expected < -128 or expected > 127:
+        print("Arithmetic Overflow: Yes")
+    else:
+        print("Arithmetic Overflow: No")
+
+
+print("8-BIT SIGNED BINARY ARITHMETIC")
+
+print("\na) (34 + (+27))")
+arithmetic(34, 27, '+')
+
+print("\nb) ((-34) - (-27))")
+arithmetic(-34, -27, '-')
