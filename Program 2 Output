@@ -1,0 +1,13 @@
+ROTATE LEFT WITHOUT CARRY (ROL)
+Original Number: 10110110
+After rotation 1 : 01101101
+After rotation 2 : 11011010
+Final Result: 11011010
+
+ROTATE LEFT WITH CARRY (RCL)
+Original Number: 10110110
+Initial Carry Flag: 0
+After rotation 1 : 01101100 Carry Flag: 1
+After rotation 2 : 11011001 Carry Flag: 0
+Final Result: 11011001
+Final Carry Flag: 0
