@@ -1,0 +1,20 @@
+8-BIT SIGNED BINARY ARITHMETIC
+
+a) (34 + (+27))
+
+First Operand : 00100010
+Second Operand: 00011011
+Operation: Addition
+Result in Binary : 00111101
+Result in Decimal: 61
+Arithmetic Overflow: No
+
+b) ((-34) - (-27))
+
+First Operand : 11011110
+Second Operand: 11100101
+2's Complement of Second Operand: 00011011
+Operation: Subtraction
+Result in Binary : 11111001
+Result in Decimal: -7
+Arithmetic Overflow: No
